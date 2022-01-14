@@ -34,12 +34,13 @@ extension DatabaseManager {
             }
             completion(.success(value))
         }
-    } /// End of Function
-} /// End of Extension
+    } // End of Function
+} // End of Extension
 
 extension DatabaseManager {
     
     // MARK: Function
+    /// check if user is exist in database or not
     public func userExists(with email: String, completion: @escaping ((Bool) -> Void)) {
         var safeEmail = email.replacingOccurrences(of: ".", with: "-")
         safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
@@ -55,7 +56,7 @@ extension DatabaseManager {
     } // End of function
     
     /// Inserts new user to database
-    public func insertUser(with user: ChatAppUser, completion: @escaping (Bool) -> Void) {
+    public func insertUser(with user: Grocery, completion: @escaping (Bool) -> Void) {
         database.child(user.safeEmail).setValue([
             "first_name": user.firstName,
             "last_name": user.lastName
@@ -111,7 +112,6 @@ extension DatabaseManager {
         })
     } //End of function
     
-    
     /// Gets all users from database
     public func getAllUsers(completion: @escaping (Result<[[String: String]], Error>) -> Void) {
         database.child("users").observeSingleEvent(of: .value, with: { snapshot in
@@ -123,29 +123,27 @@ extension DatabaseManager {
             completion(.success(value))
         })
     }
-    
+    /// when unknown error happend after try to fetch data from database
     public enum DatabaseError: Error {
         case failedToFetch
         
         public var localizedDescription: String {
             switch self {
             case .failedToFetch:
-                return "This means blah failed"
+                return "Unknown failed"
             }
         }
     } // End of enum
     
 } // End of Extension
 
-
 // MARK: Structs
-struct ChatAppUser {
+struct Grocery {
     let firstName: String
     let lastName: String
     let emailAddress: String
-    //let profilePictureUrl: String
     
-    // check type -> email @ -
+    /// check type -> email @ -
     var safeEmail : String{
         var safeEmail = emailAddress.replacingOccurrences(of: ".", with: "-")
         safeEmail = safeEmail.replacingOccurrences(of: "@", with: "-")
