@@ -3,21 +3,21 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>664430195741-2keon7asghqaccuutm93tvg6efiuogco.apps.googleusercontent.com</string>
+	<string>178288389271-8q673f3qjequ1h9glu454h08n0lt2gf6.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.664430195741-2keon7asghqaccuutm93tvg6efiuogco</string>
+	<string>com.googleusercontent.apps.178288389271-8q673f3qjequ1h9glu454h08n0lt2gf6</string>
 	<key>API_KEY</key>
-	<string>AIzaSyBp2XMopEb18SGo5B0r9tx8pG9_lQhsZ8w</string>
+	<string>AIzaSyBuAq56xNWpAav3015-ObjsiUiowcTHwIA</string>
 	<key>GCM_SENDER_ID</key>
-	<string>664430195741</string>
+	<string>178288389271</string>
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
 	<string>ahad.Grocery-app-BeltExam2-Ahad</string>
 	<key>PROJECT_ID</key>
-	<string>grocery-b991b</string>
+	<string>grocerylist-864ab</string>
 	<key>STORAGE_BUCKET</key>
-	<string>grocery-b991b.appspot.com</string>
+	<string>grocerylist-864ab.appspot.com</string>
 	<key>IS_ADS_ENABLED</key>
 	<false></false>
 	<key>IS_ANALYTICS_ENABLED</key>
@@ -29,6 +29,6 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:664430195741:ios:ab73e20273e0591273c2f4</string>
+	<string>1:178288389271:ios:976853773f901795c6cdd2</string>
 </dict>
 </plist>

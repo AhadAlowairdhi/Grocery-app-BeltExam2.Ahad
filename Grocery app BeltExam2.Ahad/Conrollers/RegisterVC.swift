@@ -27,13 +27,13 @@ class RegisterVC: UIViewController {
 // MARK: IB Action
     
     @IBAction func registerBtnAction(_ sender: UIButton) {
-        guard let fName = firstNameTF.text, let lName = lastNameTF.text, let eAddress = newEmailTF.text , let nPass = newEmailTF.text,
+        guard let fName = firstNameTF.text, let lName = lastNameTF.text, let eAddress = newEmailTF.text , let nPass = newPasswordTF.text,
                 !fName.isEmpty, !lName.isEmpty , !eAddress.isEmpty, !nPass.isEmpty else {
             alertEmpty()
             return
         }
         
-        // Firebase create new user
+        /// Firebase create new user
         Auth.auth().createUser(withEmail: eAddress, password: nPass, completion: { authResult, error in
             guard let result = authResult, error == nil else {
                 print("Error creating user")
@@ -42,6 +42,10 @@ class RegisterVC: UIViewController {
             
             let user = result.user
             print("Created user \(user)")
+            
+            // if this succeeds, dismiss
+                        let GroceryItemsVC =  self.storyboard?.instantiateViewController(withIdentifier: "GroceryListTVC") as! GroceryListTVC
+                        self.navigationController?.pushViewController(GroceryItemsVC, animated: true)
         })
     } // End of button action
     
@@ -52,5 +56,5 @@ class RegisterVC: UIViewController {
         let alert = UIAlertController(title: "Woops", message: message, preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "Ok", style: .cancel, handler: nil))
         self.present(alert, animated: true)
-    } ///End of alert action
-} /// End of class
+    } //End of alert action
+} // End of class
